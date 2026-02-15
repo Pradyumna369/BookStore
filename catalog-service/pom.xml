@@ -193,7 +193,7 @@
 				<groupId>io.github.git-commit-id</groupId>
 				<artifactId>git-commit-id-maven-plugin</artifactId>
 				<configuration>
-					<skip>true</skip>
+					<offline>true</offline>
 				</configuration>
 			</plugin>
 			<plugin>
