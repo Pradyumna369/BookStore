@@ -2,7 +2,7 @@ package com.example.catalog_service.domain;
 
 import java.util.List;
 
-public record PagedResult<T> (
+public record PagedResult<T>(
         long totalElements,
         int pageNumber,
         int totalPages,
