@@ -1,6 +1,6 @@
-package com.example.catalog_service.web.exception;
+package com.example.order_service.web.exception;
 
-import com.example.catalog_service.domain.ProductNotFoundException;
+import com.example.order_service.domain.OrderNotFoundException;
 import java.net.URI;
 import java.time.Instant;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     private static final URI NOT_FOUND_TYPE = URI.create("https://api.bookstore.com/errors/not-found");
     private static final URI ISE_FOUND_TYPE = URI.create("https://api.bookstore.com/errors/server-error");
-    private static final String SERVICE_NAME = "catalog-service";
+    private static final String SERVICE_NAME = "order-service";
 
     @ExceptionHandler(Exception.class)
     ProblemDetail handleUnhandledException(Exception e) {
@@ -27,8 +27,8 @@ class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problemDetail;
     }
 
-    @ExceptionHandler(ProductNotFoundException.class)
-    ProblemDetail handleProductNotFoundException(ProductNotFoundException e) {
+    @ExceptionHandler(OrderNotFoundException.class)
+    ProblemDetail handleOrderNotFoundException(OrderNotFoundException e) {
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, e.getMessage());
         problemDetail.setTitle("Product Not Found");
         problemDetail.setType(NOT_FOUND_TYPE);
