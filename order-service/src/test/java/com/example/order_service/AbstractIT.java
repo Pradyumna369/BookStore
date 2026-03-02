@@ -9,8 +9,9 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Import;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@Import(TestcontainersConfiguration.class)
+@Import(com.example.order_service.TestcontainersConfiguration.class)
 public class AbstractIT {
+
     @LocalServerPort
     int port;
 

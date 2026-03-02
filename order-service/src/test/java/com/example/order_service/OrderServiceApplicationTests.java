@@ -2,10 +2,8 @@ package com.example.order_service;
 
 import org.junit.jupiter.api.Test;
 
-class OrderServiceApplicationTests extends AbstractIT{
+class OrderServiceApplicationTests extends AbstractIT {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {}
 }

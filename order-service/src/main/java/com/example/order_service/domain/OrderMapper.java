@@ -3,11 +3,9 @@ package com.example.order_service.domain;
 import com.example.order_service.domain.models.CreateOrderRequest;
 import com.example.order_service.domain.models.OrderItem;
 import com.example.order_service.domain.models.OrderStatus;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 class OrderMapper {
 
@@ -30,5 +28,4 @@ class OrderMapper {
         newOrder.setItems(orderItems);
         return newOrder;
     }
-
 }

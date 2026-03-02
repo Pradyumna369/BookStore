@@ -1,7 +1,7 @@
 package com.example.order_service.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.example.order_service.ApplicationProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
