@@ -1,9 +1,7 @@
 package com.example.order_service.domain;
 
-import com.example.order_service.domain.models.CreateOrderRequest;
-import com.example.order_service.domain.models.CreateOrderResponse;
-import com.example.order_service.domain.models.OrderCreatedEvent;
-import com.example.order_service.domain.models.OrderStatus;
+import com.example.order_service.domain.models.*;
+
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +41,10 @@ public class OrderService {
         for (OrderEntity order : orders) {
             this.process(order);
         }
+    }
+
+    public List<OrderSummary> findOrders(String userName) {
+        return orderRepository.findByUserName(userName);
     }
 
     private void process(OrderEntity order) {
