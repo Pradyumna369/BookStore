@@ -25,4 +25,12 @@ interface OrderRepository extends JpaRepository<OrderEntity, Long> {
     where o.userName = :userName
     """)
     List<OrderSummary> findByUserName(String userName);
+
+    //Solving N + 1 query problem in Hibernate using join fetch
+    @Query("""
+    select distinct o
+    from OrderEntity o left join fetch o.items
+    where o.userName = :userName and o.orderNumber = :orderNumber
+    """)
+    Optional<OrderEntity> findByUserNameAndOrderNumber(String userName, String orderNumber);
 }

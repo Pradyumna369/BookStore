@@ -1,9 +1,11 @@
 package com.example.order_service.web.controllers;
 
+import com.example.order_service.domain.OrderNotFoundException;
 import com.example.order_service.domain.OrderService;
 import com.example.order_service.domain.SecurityService;
 import com.example.order_service.domain.models.CreateOrderRequest;
 import com.example.order_service.domain.models.CreateOrderResponse;
+import com.example.order_service.domain.models.OrderDTO;
 import com.example.order_service.domain.models.OrderSummary;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -39,5 +41,14 @@ class OrderController {
         String userName = securityService.getLoginUserName();
         log.info("Fetching orders for user: {} ", userName);
         return orderService.findOrders(userName);
+    }
+
+    @GetMapping(value = "/{orderNumber}")
+    OrderDTO getOrder(@PathVariable(value = "orderNumber") String orderNumber) {
+        log.info("Fetching order by id: {}", orderNumber);
+        String userName = securityService.getLoginUserName();
+        return orderService
+                .findUserOrder(userName, orderNumber)
+                .orElseThrow(() -> new OrderNotFoundException(orderNumber));
     }
 }
