@@ -1,7 +1,6 @@
 package com.example.order_service.domain;
 
 import com.example.order_service.domain.models.*;
-
 import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
@@ -57,4 +56,3 @@ class OrderEventMapper {
                 .collect(Collectors.toSet());
     }
 }
-

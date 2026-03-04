@@ -1,10 +1,9 @@
 package com.example.order_service.domain;
 
 import com.example.order_service.domain.models.OrderStatus;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 interface OrderRepository extends JpaRepository<OrderEntity, Long> {
     List<OrderEntity> findByStatus(OrderStatus status);
