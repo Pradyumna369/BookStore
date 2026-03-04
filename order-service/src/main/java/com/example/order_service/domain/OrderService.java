@@ -1,10 +1,8 @@
 package com.example.order_service.domain;
 
 import com.example.order_service.domain.models.*;
-
 import java.util.List;
 import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -50,7 +48,8 @@ public class OrderService {
     }
 
     public Optional<OrderDTO> findUserOrder(String userName, String orderNumber) {
-        return orderRepository.findByUserNameAndOrderNumber(userName, orderNumber)
+        return orderRepository
+                .findByUserNameAndOrderNumber(userName, orderNumber)
                 .map(OrderMapper::convertToDTO);
     }
 
