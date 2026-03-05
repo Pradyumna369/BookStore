@@ -1,7 +1,6 @@
 package com.example.notification_service.domain;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity

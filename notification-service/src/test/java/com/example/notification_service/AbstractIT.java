@@ -7,6 +7,4 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @Import(com.example.notification_service.TestcontainersConfiguration.class)
-public class AbstractIT {
-
-}
+public class AbstractIT {}
