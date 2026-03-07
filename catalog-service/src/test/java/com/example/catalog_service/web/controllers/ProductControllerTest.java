@@ -60,7 +60,7 @@ class ProductControllerTest extends AbstractIT {
                 .then()
                 .statusCode(404)
                 .body("status", is(404))
-                .body("title", is("Order Not Found"))
+                .body("title", is("Product Not Found"))
                 .body("detail", is("Product with code " + code + " not found"));
     }
 }
