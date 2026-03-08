@@ -22,7 +22,7 @@ class ProductController {
     }
 
     @GetMapping
-    String index(){
+    String index() {
         return "redirect:/products";
     }
 

@@ -3,7 +3,6 @@ package com.example.bookstore_webapp.controllers;
 import com.example.bookstore_webapp.clients.orders.*;
 import jakarta.validation.Valid;
 import java.util.List;
-import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -59,5 +58,4 @@ class OrderController {
         log.info("Fetching orders");
         return orderServiceClient.getOrders();
     }
-
 }

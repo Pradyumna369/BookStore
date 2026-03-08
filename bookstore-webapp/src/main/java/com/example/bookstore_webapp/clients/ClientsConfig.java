@@ -1,10 +1,9 @@
 package com.example.bookstore_webapp.clients;
 
-import java.time.Duration;
-
 import com.example.bookstore_webapp.ApplicationProperties;
 import com.example.bookstore_webapp.clients.catalog.CatalogServiceClient;
 import com.example.bookstore_webapp.clients.orders.OrderServiceClient;
+import java.time.Duration;
 import org.springframework.boot.http.client.ClientHttpRequestFactoryBuilder;
 import org.springframework.boot.web.client.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;

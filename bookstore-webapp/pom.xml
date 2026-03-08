@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<dockerImageName>pradyumnaneu/bookstore-${project.artifactId}</dockerImageName>
+		<dockerImageName>pradyumnaneu/bookstore-webapp</dockerImageName>
 	</properties>
 	<dependencies>
 		<dependency>
